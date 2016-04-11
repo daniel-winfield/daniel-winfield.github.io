@@ -8,14 +8,13 @@ h1 {
 }
 
 /* Header */
-header li {
-	float: left;
-	font:20px;
-}
-
 header a {
 	float: left;
-	font:40px;
+	font-size: 20px;
+}
+
+.logo {
+	font-size: 40px;
 }
 
 /* Footer */
