@@ -35,7 +35,8 @@ footer img {
 }
 
 .stopfloat {
-	float: left;
+	/*float: left;
 	width: 100%;
-	height: 20px;
+	height: 20px;*/
+	clear: left;
 }
