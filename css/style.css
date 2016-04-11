@@ -8,14 +8,14 @@ h1 {
 }
 
 /* Header */
-header a {
-	float: left;
-	font:40px;
-}
-
 header li {
 	float: left;
 	font:20px;
+}
+
+header a {
+	float: left;
+	font:40px;
 }
 
 /* Footer */
@@ -26,7 +26,6 @@ footer {
 footer h1 {
     float: right;
     font-size: 20px;
-    
 }
 footer img {
     width: 50px;
@@ -36,5 +35,6 @@ footer img {
 }
 
 .stopfloat {
-	float: none;
+	width: 100%;
+	height: 5px;
 }
