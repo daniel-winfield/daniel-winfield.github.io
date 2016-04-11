@@ -34,3 +34,7 @@ footer img {
     float: right;
     padding-left: 5px;
 }
+
+.stopfloat {
+	float: none;
+}
