@@ -4,11 +4,23 @@ body {
 
 h1 {
     color: black;
+
+}
+
+/* Header */
+header h1 {
+	float: left;
+	font:40px;
+}
+
+header li {
+	float: left;
+	font:20px;
 }
 
 /* Footer */
 footer {
-    background-color: grey;
+    /*background-color: grey;*/
 }
 
 footer h1 {
