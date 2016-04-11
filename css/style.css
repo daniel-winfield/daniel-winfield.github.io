@@ -9,12 +9,12 @@ h1 {
 
 /* Header */
 header a {
-	float: right;
+	float: left;
 	font:40px;
 }
 
 header li {
-	float: right;
+	float: left;
 	font:20px;
 }
 
