@@ -11,6 +11,7 @@ h1 {
 header li {
 	float: left;
 	font-size: 20px;
+	padding: 10px;
 }
 
 .logo {
