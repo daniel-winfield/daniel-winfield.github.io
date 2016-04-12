@@ -16,6 +16,7 @@ header li {
 .logo {
 	float: left;
 	font-size: 40px;
+	padding-right: 50px;
 }
 
 /* Footer */
