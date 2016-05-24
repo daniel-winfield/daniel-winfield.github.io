@@ -42,3 +42,7 @@ footer img {
 .stopfloat {
 	clear: left;
 }
+
+table {
+	border-style: bold;
+}
