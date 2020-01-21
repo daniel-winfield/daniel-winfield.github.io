@@ -1,13 +1,13 @@
-body {
+/* body {
     font-family: 'Roboto', serif;
 }
 
 h1 {
     color: black;
-}
+} */
 
 /* Header */
-header li {
+/* header li {
 	float: left;
 	font-size: 20px;
 	padding: 10px;
@@ -17,10 +17,10 @@ header li {
 	float: left;
 	font-size: 40px;
 	padding-right: 50px;
-}
+} */
 
 /* Footer */
-footer {
+/* footer {
     background-color: grey;
 }
 
@@ -45,4 +45,25 @@ footer img {
 
 table {
 	border-style: solid;
+} */
+
+.navbar-transparent {
+   background-color: transparent; 
+}
+
+main {
+    /* margin-top: 55px; */
+}
+
+.cover-container {
+    position: relative;
+    text-align: center;
+    color: #888
+}
+
+.cover-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

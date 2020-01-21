@@ -1,32 +1,96 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Daniel Winfield</title>
-        <script src="code.js" type="text/javascript" charset="utf-8"></script> 
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <title>Daniel Winfield</title>
     </head>
     <body>
-        <header>
-            <div id="new-header">
-                <script>
-                    $("#new-header").load("header.html");
-                </script>
-            </div>
-        </header>
-        <main>
-			<h1>Welcome to my website</h1>
-        </main>
-        <footer>
-            <div id="new-footer">
-                <script>
-                    $("#new-footer").load("footer.html");
-                </script>
-            </div>
-        </footer>
-        
+        <div id="app">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-transparent">
+                    <a class="navbar-brand" href="#">{{ fullName }}</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse pull-right" id="navbarToggler">
+                        <ul class="navbar-nav" v-for="link in socialLinks">
+                            <li class="nav-item">
+                                <a class="nav-link" v-bind:href="link.url" target="_blank">{{ link.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <div>
+                    <img style="width: 100%;" v-bind:src="headerImageUrl" alt="abstract header image" />
+                    <div class="cover-center">
+                        <h1 class="cover-heading">{{ fullName }}</h1>
+                        <p class="lead">{{ jobTitle }}</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img v-bind:src="about.photoUrl" style="width: 100%;" alt="photograph of face" />
+                        </div>
+                        <div class="col-md-7">
+                            <h2>{{ about.title }}</h2>
+                            {{ about.description }}                      
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>{{ workExperience.title }}</h2>
+                            <table>
+                                <tbody v-for="item in workExperience.items">
+                                    <tr>
+                                        <th colspan="1">{{ item.dates }}</th>
+                                        <th colspan="4">{{ item.company }} - {{ item.jobTitle }}</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ item.description }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>{{ education.title }}</h2>
+                            <table>
+                                <tbody v-for="item in education.items">
+                                    <tr>
+                                        <th>{{ item.dates }}</th>
+                                        <th>{{ item.institution }}</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>{{ item.info }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="code.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
