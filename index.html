@@ -5,21 +5,22 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
         <title>Daniel Winfield</title>
     </head>
     <body>
         <div id="app">
             <header>
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-transparent">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-transparent">
                     <a class="navbar-brand" href="#">{{ fullName }}</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse pull-right" id="navbarToggler">
-                        <ul class="navbar-nav" v-for="link in socialLinks">
-                            <li class="nav-item">
-                                <a class="nav-link" v-bind:href="link.url" target="_blank">{{ link.name }}</a>
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" v-for="link in socialLinks">
+                                <a class="nav-link" v-bind:href="link.url" target="_blank"><i :class="link.iconClass" class="fab" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
                             </li>
                         </ul>
                     </div>
@@ -36,47 +37,36 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-5">
+                        <!-- <div class="col-md-5">
                             <img v-bind:src="about.photoUrl" style="width: 100%;" alt="photograph of face" />
-                        </div>
-                        <div class="col-md-7">
+                        </div> -->
+                        <div class="col-md-12">
                             <h2>{{ about.title }}</h2>
                             {{ about.description }}                      
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <h2>{{ workExperience.title }}</h2>
-                            <table>
-                                <tbody v-for="item in workExperience.items">
-                                    <tr>
-                                        <th colspan="1">{{ item.dates }}</th>
-                                        <th colspan="4">{{ item.company }} - {{ item.jobTitle }}</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>{{ item.description }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div v-for="item in workExperience.items">
+                                <div>
+                                    <p><span class="h5">{{ item.company }}</span> <span style="float:right;" class="text-muted"><i class="fas fa-map-marked-alt"></i> {{ item.location }}</span></h5>
+                                    <p class="mb-2">{{ item.jobTitle }} <span style="float:right;" class="text-muted">{{ months[item.startDate.getMonth()] + ' ' + item.startDate.getFullYear() }} - {{ item.endDate ? months[item.endDate.getMonth()] + ' ' + item.endDate.getFullYear() : 'Present' }}</span></p>
+                                    <p>{{ item.description }}</p>
+                                </div>                                    
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>{{ education.title }}</h2>
+                            <div v-for="item in education.items">
+                                    <p><span class="h5">{{ item.institution }}</span> <span style="float:right;" class="text-muted"><i class="fas fa-map-marker-alt"></i> {{ item.location }}</span></h5>
+                                    <p class="mb-2">{{ item.qualification }} <span style="float:right;" class="text-muted">{{ item.startDate.getFullYear() }} - {{ item.endDate.getFullYear() }}</span></p>
+                                    <p>{{ item.info }}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <h2>{{ education.title }}</h2>
-                            <table>
-                                <tbody v-for="item in education.items">
-                                    <tr>
-                                        <th>{{ item.dates }}</th>
-                                        <th>{{ item.institution }}</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>{{ item.info }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-12">
