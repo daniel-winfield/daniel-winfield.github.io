@@ -50,7 +50,10 @@ table {
 .navbar-transparent {
    background-color: transparent; 
 }
-
+.navbar {
+   transition: background-color linear 250ms;
+   transition: color linear 250ms;
+}
 main {
     /* margin-top: 55px; */
 }
