@@ -19,42 +19,47 @@ var app = new Vue({
             items: [
                 { 
                     company: 'Imosphere Ltd',
-                    jobTitle: 'Gradate Software Engineer',
-                    dates: 'July 2019 - Present',                    
-                    startDate: new Date(2019, 6),
-                    endDate: null,
-                    description: "Responsible for designing and implementing features and bug fixes on the Atmolytics healthcare software platform (C#, ASP.NET, TypeScript, SQL), and for developing for the Resource Allocation System (SQL) in use by councils and CCG's across the United Kingdom.",
-                    companyImageUrl: '',
-                    location: 'Nottingham, UK'
-                },                
-                { 
-                    company: 'Imosphere Ltd',
-                    jobTitle: 'Placement Software Engineer',
-                    dates: 'July 2017 - July 2019',
-                    startDate: new Date(2017, 6),
-                    endDate: new Date(2019, 6),
-                    description: "Worked on multiple projects during my year-long placement. This was continued in the same role during my final year of university on a one-day per week basis.",
-                    companyImageUrl: '',
+                    positions: [
+                        {
+                            jobTitle: 'Gradate Software Engineer',
+                            startDate: new Date(2019, 6),
+                            endDate: null,
+                            description: "Responsible for designing and implementing features and bug fixes on the Atmolytics healthcare software platform (C#, ASP.NET, TypeScript, SQL), and for developing for the Resource Allocation System (SQL) in use by councils and CCG's across the United Kingdom."
+                        },
+                        {
+                            jobTitle: 'Placement Software Engineer',
+                            startDate: new Date(2017, 6),
+                            endDate: new Date(2019, 6),
+                            description: "Worked on multiple projects during my year-long placement. This was continued in the same role during my final year of university on a one-day per week basis."
+                        }
+                    ],
+                    imageUrl: 'images/imosphere-logo.png',
                     location: 'Nottingham, UK'
                 },
                 { 
                     company: 'One Tower Ltd',
-                    jobTitle: 'Web Developer',
-                    dates: 'May 2016 - Present',
-                    startDate: new Date(2016, 4),
-                    endDate: null,
-                    description: "Responsible for designing, implementing, and maintaining the website through the WordPress platform.",
-                    companyImageUrl: '',
+                    positions: [
+                        {
+                            jobTitle: 'Web Developer',
+                            startDate: new Date(2016, 4),
+                            endDate: new Date(2019, 6),
+                            description: "Responsible for designing, implementing, and maintaining the website through the WordPress platform."        
+                        }
+                    ],
+                    imageUrl: 'images/one-tower-logo.jpg',
                     location: 'Nottingham, UK'
                 },
                 { 
                     company: 'Blinds Fit',
-                    jobTitle: 'Web and Social Media Developer',
-                    dates: 'March 2016 - Present',
-                    startDate: new Date(2016, 2),
-                    endDate: null,
-                    description: 'Responsible for improving and updating the website through the Joomla platform.',
-                    companyImageUrl: '',
+                    positions: [
+                        {
+                            jobTitle: 'Web and Social Media Developer',
+                            startDate: new Date(2016, 2),
+                            endDate: new Date(2019, 6),
+                            description: 'Responsible for improving and updating the website through the Joomla platform.'                            
+                        }
+                    ],
+                    imageUrl: 'images/blinds-fit-logo.jpg',
                     location: 'Nottingham, UK'
                 }
             ]
@@ -64,33 +69,82 @@ var app = new Vue({
             items: [
                 {
                     institution: 'Nottingham Trent University',
-                    startDate: new Date(2015, 0),
-                    endDate: new Date(2019, 0),
-                    qualification: 'BSc (Hons) Computer Science SW',
-                    info: 'Achieved a First class degree with honours',
-                    location: 'Nottingham, UK'
+                    qualifications: [{
+                        startDate: new Date(2015, 0),
+                        endDate: new Date(2019, 0),
+                        qualification: 'BSc (Hons) Computer Science SW',
+                        info: 'Achieved a First class degree with honours'
+                    }],         
+                    location: 'Nottingham, UK',
+                    imageUrl: 'images/ntu-logo.jpg'
                 },{
                     institution: 'Burton and South Derbyshire College',
-                    startDate: new Date(2013, 0),
-                    endDate: new Date(2015, 0),
-                    qualification: 'Edexcel Extended Diploma in IT',
-                    info: 'Achieved a Distinction Star, Distinction, Distinction',
-                    location: 'Burton-on-Trent, UK'
-                },{
-                    institution: 'The de Ferrers Academy',
-                    startDate: new Date(2007, 0),
-                    endDate: new Date(2013, 0),
-                    qualification: 'GCSE',
-                    info: 'Achieved 9 GCSEs at grades A-C including Maths, English and Science.',
-                    location: 'Burton-on-Trent, UK'
-                }
+                    qualifications: [{
+                        startDate: new Date(2013, 0),
+                        endDate: new Date(2015, 0),
+                        qualification: 'Edexcel Extended Diploma in IT',
+                        info: 'Achieved a Distinction Star, Distinction, Distinction'
+                    }],
+                    location: 'Burton-on-Trent, UK',
+                    imageUrl: 'images/bsdc-logo.jpg'
+                 },
+                 {
+                    institution: 'Microsoft',
+                    qualifications: [
+                        {
+                            startDate: null,
+                            endDate: new Date(2015, 0),
+                            qualification: 'MTA: Database Fundamentals',
+                            info: null                    
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2015, 0),
+                            qualification: 'MTA: Windows® Server Administration Fundamentals',
+                            info: null
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2015, 0),
+                            qualification: 'MTA: Software Development Fundamentals (C#)',
+                            info: null
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2015, 0),
+                            qualification: 'MTA: Security Fundamentals',
+                            info: null
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2015, 0),
+                            qualification: 'MTA: Networking Fundamentals',
+                            info: null
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2014, 0),
+                            qualification: 'MTA: Windows® Operating System Fundamentals',
+                            info: null
+                        }, {
+                            startDate: null,
+                            endDate: new Date(2014, 0),
+                            qualification: 'MTA: Web Development Fundamentals (C#)',
+                            info: null
+                        }
+                    ],
+                    location: null,
+                    imageUrl: 'images/microsoft-logo.png'
+                 }
+                //,{
+                //     institution: 'The de Ferrers Academy',
+                //     startDate: new Date(2007, 0),
+                //     endDate: new Date(2013, 0),
+                //     qualification: 'GCSE',
+                //     info: 'Achieved 9 GCSEs at grades A-C including Maths, English and Science.',
+                //     location: 'Burton-on-Trent, UK'
+                // }
             ]
         },
         months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     },
     methods: {
         handleScroll (event) {
-            console.log(document.body.scrollTop + ' ' + document.documentElement.scrollTop)
             let navElement = document.getElementById("navbar");
 
             if (document.documentElement.scrollTop > 50) {
