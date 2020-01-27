@@ -1,7 +1,46 @@
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+Vue.component('qualification-item', {
+    props: ['item'],
+    template: `
+        <div class="row">
+            <div class="col-lg-2 col-3">
+                <img :src="item.imageUrl" style="width: 100%;"/>
+            </div>
+            <div class="col-lg-10 col-7">
+                <p><span class="h5">{{ item.institution }}</span> <span style="float:right;" class="text-muted"><i v-if="item.location" class="fas fa-map-marker-alt"></i> {{ item.location }}</span></h5>
+                <div v-for="qualification in item.qualifications">
+                    <p class="mb-2">{{ qualification.qualification }} <span style="float:right;" class="text-muted">{{ qualification.startDate ? qualification.startDate.getFullYear() + ' - ' : '' }}{{ qualification.endDate.getFullYear() }}</span></p>
+                    <p>{{ qualification.info }}</p>
+                </div>
+            </div>
+        </div>
+    `
+})
+
+Vue.component('employment-item', {
+    props: ['item', 'months'],
+    template: `
+        <div class="row">
+            <div class="col-lg-2 col-3">
+                <img :src="item.imageUrl" style="width: 100%;"/>
+            </div>                                    
+            <div class="col-lg-10 col-9">
+                <p><span class="h5">{{ item.company }}</span> <span style="float:right;" class="text-muted"><i class="fas fa-map-marked-alt"></i> {{ item.location }}</span></h5>
+                <div v-for="position in item.positions">
+                    <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
+                    <p>{{ position.description }}</p>
+                </div>                                        
+            </div>    
+        </div> 
+    `
+})
+
 var app = new Vue({
     el: '#app',
     data: {
         fullName: 'Daniel Winfield',
+        months: months,
         jobTitle: 'Software Engineer',
         headerImageUrl: 'images/code-coding-computer-data-574070.jpg',
         socialLinks: [
@@ -140,8 +179,7 @@ var app = new Vue({
                 //     location: 'Burton-on-Trent, UK'
                 // }
             ]
-        },
-        months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        }        
     },
     methods: {
         handleScroll (event) {

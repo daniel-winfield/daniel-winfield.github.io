@@ -50,9 +50,11 @@ table {
 .navbar-transparent {
    background-color: transparent; 
 }
+
 .navbar {
-   transition: background-color linear 250ms;
+    transition: background-color linear 250ms;
 }
+
 main {
     /* margin-top: 55px; */
 }
@@ -61,11 +63,19 @@ main {
     position: relative;
     text-align: center;
     color: #888
-}
+} 
 
 .cover-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
