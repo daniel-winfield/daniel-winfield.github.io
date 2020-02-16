@@ -1,70 +1,20 @@
  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    /* font-family: 'Roboto', serif; */
     font-family: 'Noto Serif SC', serif;
 }
-/*
-h1 {
-    color: black;
-} */
-
-/* Header */
-/* header li {
-	float: left;
-	font-size: 20px;
-	padding: 10px;
-}
-
-.logo {
-	float: left;
-	font-size: 40px;
-	padding-right: 50px;
-} */
-
-/* Footer */
-/* footer {
-    background-color: grey;
-}
-
-footer h1 {
-    float: right;
-    font-size: 20px;
-}
-footer img {
-    width: 30px;
-    height: 30px;
-    float: right;
-    padding-left: 5px;
-}
-
-#new-footer {
-	background-color: grey;
-}
-
-.stopfloat {
-	clear: left;
-}
-
-table {
-	border-style: solid;
-} */
 
 .navbar-transparent {
-   background-color: transparent; 
+   background-color: transparent;
 }
 
 .navbar {
     transition: background-color linear 250ms;
 }
 
-main {
-    /* margin-top: 55px; */
-}
-
 .cover-container {
     position: relative;
     text-align: center;
     color: #888
-} 
+}
 
 .cover-center {
     position: absolute;
@@ -79,4 +29,36 @@ main {
     width: 100%;
     color: white;
     text-align: center;
+}
+
+.background-colour-primary {
+    /* color: #FFF; */
+    background-color: #55198b;
+}
+
+.colour-primary {
+    /* color: #FFF; */
+    color: #55198b;
+}
+
+/* .colour-primary, .colour-primary a {
+    color: #C0b283 !important;
+    background-color: #f4f4f4;
+}  */
+
+@font-face {
+    font-family: Brotherpoll;
+    src: url('../fonts/Brotherpoll-Italic.otf');
+}
+
+.signature {
+    font-family: Brotherpoll;
+}
+
+.font-size-2x {
+    font-size: 2em;
+}
+
+.font-size-5x {
+    font-size: 5em;
 }

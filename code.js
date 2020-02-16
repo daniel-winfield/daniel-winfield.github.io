@@ -56,7 +56,7 @@ Vue.component('employment-item', {
 Vue.component('skill-item', {
     props: ['item'],
     template: `
-        <span class="badge badge-pill badge-dark">{{ item.name }}<i class="ml-2" v-bind:class="item.iconClass"></i></span>
+        <span class="badge badge-pill badge-dark background-colour-primary">{{ item.name }}<i class="ml-2" v-bind:class="item.iconClass"></i></span>
     `
 })
 
@@ -65,7 +65,7 @@ var app = new Vue({
     data: {
         fullName: 'Daniel Winfield',
         months: months,
-        jobTitle: 'Software Engineer',
+        jobTitle: 'Full Stack Software Engineer',
         headerImageUrl: 'images/code-coding-computer-data-574070.jpg',
         socialLinks: [
             { name: 'GitHub', url: 'https://github.com/daniel-winfield', iconClass: 'fa-github' },
@@ -182,8 +182,8 @@ var app = new Vue({
                     }],
                     location: 'Burton-on-Trent, UK',
                     imageUrl: 'images/bsdc-logo.jpg'
-                 },
-                 {
+                },
+                {
                     institution: 'Microsoft',
                     qualifications: [
                         {
@@ -225,15 +225,7 @@ var app = new Vue({
                     ],
                     location: null,
                     imageUrl: 'images/microsoft-logo.png'
-                 }
-                //,{
-                //     institution: 'The de Ferrers Academy',
-                //     startDate: new Date(2007, 0),
-                //     endDate: new Date(2013, 0),
-                //     qualification: 'GCSE',
-                //     info: 'Achieved 9 GCSEs at grades A-C including Maths, English and Science.',
-                //     location: 'Burton-on-Trent, UK'
-                // }
+                }
             ]
         }        
     },
@@ -246,10 +238,10 @@ var app = new Vue({
                 navElement.classList.remove("navbar-transparent");
 
                 navElement.classList.add("navbar-dark");
-                navElement.classList.add("bg-dark");
+                navElement.classList.add("background-colour-primary");
             } else {
                 navElement.classList.remove("navbar-dark");
-                navElement.classList.remove("bg-dark");
+                navElement.classList.remove("background-colour-primary");
 
                 navElement.classList.add("navbar-light");
                 navElement.classList.add("navbar-transparent");
