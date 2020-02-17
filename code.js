@@ -21,7 +21,7 @@ Vue.component('qualification-item', {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     `
@@ -33,7 +33,7 @@ Vue.component('employment-item', {
         <div class="row">
             <div class="col-lg-2 col-3">
                 <img :src="item.imageUrl" style="width: 100%;"/>
-            </div>                                    
+            </div>
             <div class="col-lg-10 col-9">
                 <div class="row">
                     <div class="col-12">
@@ -45,11 +45,11 @@ Vue.component('employment-item', {
                         <div v-for="position in item.positions">
                             <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
                             <p>{{ position.description }}</p>
-                        </div>  
+                        </div>
                     </div>
-                </div>                                                      
-            </div>    
-        </div> 
+                </div>
+            </div>
+        </div>
     `
 })
 
@@ -105,14 +105,14 @@ var app = new Vue({
                 title: 'Platforms',
                 items: [
                     { name: 'WordPress', iconClass: 'fab fa-wordpress' },
-                    { name: 'Joomla', iconClass: 'fab fa-joomla' }    
+                    { name: 'Joomla', iconClass: 'fab fa-joomla' }
                 ]
             },
         },
         workExperience: {
             title: 'Employment',
             items: [
-                { 
+                {
                     company: 'Imosphere Ltd',
                     positions: [
                         {
@@ -131,27 +131,27 @@ var app = new Vue({
                     imageUrl: 'images/imosphere-logo.png',
                     location: 'Nottingham, UK'
                 },
-                { 
+                {
                     company: 'One Tower Ltd',
                     positions: [
                         {
                             jobTitle: 'Web Developer',
                             startDate: new Date(2016, 4),
                             endDate: new Date(2019, 6),
-                            description: "Responsible for designing, implementing, and maintaining the website through the WordPress platform."        
+                            description: "Responsible for designing, implementing, and maintaining the website through the WordPress platform."
                         }
                     ],
                     imageUrl: 'images/one-tower-logo.jpg',
                     location: 'Nottingham, UK'
                 },
-                { 
+                {
                     company: 'Blinds Fit',
                     positions: [
                         {
                             jobTitle: 'Web and Social Media Developer',
                             startDate: new Date(2016, 2),
                             endDate: new Date(2019, 6),
-                            description: 'Responsible for improving and updating the website through the Joomla platform.'                            
+                            description: 'Responsible for improving and updating the website through the Joomla platform.'
                         }
                     ],
                     imageUrl: 'images/blinds-fit-logo.jpg',
@@ -169,7 +169,7 @@ var app = new Vue({
                         endDate: new Date(2019, 0),
                         qualification: 'BSc (Hons) Computer Science SW',
                         info: 'Achieved a First-class degree with honours'
-                    }],         
+                    }],
                     location: 'Nottingham, UK',
                     imageUrl: 'images/ntu-logo.jpg'
                 },{
@@ -182,15 +182,14 @@ var app = new Vue({
                     }],
                     location: 'Burton-on-Trent, UK',
                     imageUrl: 'images/bsdc-logo.jpg'
-                },
-                {
+                }, {
                     institution: 'Microsoft',
                     qualifications: [
                         {
                             startDate: null,
                             endDate: new Date(2015, 0),
                             qualification: 'MTA: Database Fundamentals',
-                            info: null                    
+                            info: null
                         }, {
                             startDate: null,
                             endDate: new Date(2015, 0),
@@ -227,24 +226,27 @@ var app = new Vue({
                     imageUrl: 'images/microsoft-logo.png'
                 }
             ]
-        }        
+        },
+        projects: {
+            title: "Projects",
+            items: [
+                {
+                    title: "",
+                    description: "",
+                    imageUrl: "",
+                    linkUrl: ""
+                }
+            ]
+        }
     },
     methods: {
         handleScroll (event) {
             let navElement = document.getElementById("navbar");
 
-            if (document.documentElement.scrollTop > 50) {
-                navElement.classList.remove("navbar-light");
-                navElement.classList.remove("navbar-transparent");
-
-                navElement.classList.add("navbar-dark");
-                navElement.classList.add("background-colour-primary");
+            if (document.documentElement.scrollTop > window.innerHeight / 2) {
+                navElement.classList.remove("hidden");
             } else {
-                navElement.classList.remove("navbar-dark");
-                navElement.classList.remove("background-colour-primary");
-
-                navElement.classList.add("navbar-light");
-                navElement.classList.add("navbar-transparent");
+                navElement.classList.add("hidden");
             }
         }
     },

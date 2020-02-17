@@ -7,7 +7,8 @@
 }
 
 .navbar {
-    transition: background-color linear 250ms;
+    opacity: 1;
+    transition: opacity linear 250ms;
 }
 
 .cover-container {
@@ -32,19 +33,12 @@
 }
 
 .background-colour-primary {
-    /* color: #FFF; */
     background-color: #55198b;
 }
 
 .colour-primary {
-    /* color: #FFF; */
     color: #55198b;
 }
-
-/* .colour-primary, .colour-primary a {
-    color: #C0b283 !important;
-    background-color: #f4f4f4;
-}  */
 
 @font-face {
     font-family: Brotherpoll;
@@ -61,4 +55,8 @@
 
 .font-size-5x {
     font-size: 5em;
+}
+
+.hidden {
+    opacity: 0;
 }
