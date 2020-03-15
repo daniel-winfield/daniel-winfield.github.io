@@ -1,0 +1,70 @@
+ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Noto Serif SC', serif;
+}
+
+.navbar-transparent {
+   background-color: transparent;
+}
+
+.navbar {
+    opacity: 1;
+    transition: opacity linear 250ms;
+}
+
+.cover-container {
+    position: relative;
+    text-align: center;
+    color: #888
+}
+
+.cover-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.gradient-colour-primary {
+    background-image: linear-gradient(45deg, #55198b, #34a264)
+}
+
+.background-colour-primary {
+    background-color: #55198b;
+}
+
+.colour-primary {
+    color: #55198b;
+}
+
+@font-face {
+    font-family: Brotherpoll;
+    src: url('../fonts/Brotherpoll-Italic.otf');
+}
+
+.signature {
+    font-family: Brotherpoll;
+}
+
+.font-size-2x {
+    font-size: 2em;
+}
+
+.font-size-5x {
+    font-size: 5em;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+[v-cloak] { 
+    display: none; 
+}

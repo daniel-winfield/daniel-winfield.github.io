@@ -1,0 +1,16 @@
+<header>
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark fixed-top gradient-colour-primary hidden">
+        <a class="navbar-brand signature font-size-2x" href="#">(( about.fullName ))</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" v-for="link in socialLinks">
+                    <a class="nav-link" v-bind:href="link.url" target="_blank"><i :class="link.iconClass" class="fab" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

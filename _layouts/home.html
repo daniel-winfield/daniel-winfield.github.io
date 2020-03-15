@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<main>
+    <div>
+        <div class="" style="width: 100%; height: 100vh; padding-top: 30vh; text-align: center;">
+            <h1 class="colour-primary signature font-size-5x">(( about.fullName ))</h1>
+            <p class="lead">(( about.jobTitle ))</p>
+            <div>
+                <a class="colour-primary pl-2 pr-2" v-for="link in socialLinks" v-bind:href="link.url" target="_blank"><i :class="link.iconClass" class="fab" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row" id="About">
+            <div class="col-md-12">
+                <h2 class="text-center">(( about.title ))</h2>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    (( about.description ))
+                </div>                      
+            </div>
+        </div>
+        <div class="row" id="Skills">
+            <div class="col-12 mb-5">
+                <h2 class="text-center">(( skills.title ))</h2>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h3 class="text-center">(( skills.languages.title ))</h3>
+                        <div style="text-align: center;">                                    
+                            <div v-for="item in skills.languages.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h3 class="text-center">(( skills.tools.title ))</h3>
+                        <div style="text-align: center;">
+                            <div v-for="item in skills.tools.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-center">(( skills.platforms.title ))</h3>
+                        <div style="text-align: center;">
+                            <div v-for="item in skills.platforms.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                    
+
+        <div class="row">
+            <div class="col-lg-6" id="Employment">
+                <div class="mb-3">
+                    <h2 class="text-center">(( workExperience.title ))</h2>
+                    <div class="shadow p-3 bg-white rounded mb-3" v-for="item in workExperience.items">
+                        <employment-item v-bind:item="item" v-bind:months="months"></employment-item>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" id="Education">
+                <div class="mb-3">
+                    <h2 class="text-center">(( education.title ))</h2>
+                    <div class="shadow p-3 bg-white rounded mb-3" v-for="item in education.items">
+                        <qualification-item v-bind:item="item"></qualification-item>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{{ content }}
