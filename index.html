@@ -15,7 +15,7 @@
         <link rel="manifest" href="images/favicon/site.webmanifest">
     </head>
     <body>
-        <div id="app">
+        <div v-cloak id="app">
             <header>
                 <nav id="navbar" class="navbar navbar-expand-sm navbar-dark fixed-top gradient-colour-primary hidden">
                     <a class="navbar-brand signature font-size-2x" href="#">{{ fullName }}</a>
@@ -90,7 +90,7 @@
 
                     <div class="row">
                         <div class="col-lg-6" id="Employment">
-                            <div class="mb-5">
+                            <div class="mb-3">
                                 <h2 class="text-center">{{ workExperience.title }}</h2>
                                 <div class="shadow p-3 bg-white rounded mb-3" v-for="item in workExperience.items">
                                     <employment-item v-bind:item="item" v-bind:months="months"></employment-item>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6" id="Education">
-                            <div class="mb-5">
+                            <div class="mb-3">
                                 <h2 class="text-center">{{ education.title }}</h2>
                                 <div class="shadow p-3 bg-white rounded mb-3" v-for="item in education.items">
                                     <qualification-item v-bind:item="item"></qualification-item>    
