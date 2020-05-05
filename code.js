@@ -68,9 +68,9 @@ var app = new Vue({
         jobTitle: 'Full Stack Software Engineer',
         headerImageUrl: 'images/code-coding-computer-data-574070.jpg',
         socialLinks: [
-            { name: 'GitHub', url: 'https://github.com/daniel-winfield', iconClass: 'fa-github' },
-            { name: 'Twitter', url: 'https://twitter.com/danielwinfield_', iconClass: 'fa-twitter' },
-            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/danielwinfield1/', iconClass: 'fa-linkedin-in' }
+            { name: 'GitHub', url: 'https://github.com/daniel-winfield', iconClass: 'fab fa-github' },
+            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/danielwinfield1/', iconClass: 'fab fa-linkedin-in' },
+            { name: 'Email', url: 'mailto:me@danielwinfield.uk', iconClass: 'fas fa-envelope' }
         ],
         about: {
             title: 'About me',
