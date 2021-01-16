@@ -77,6 +77,18 @@ var app = new Vue({
             description: "I have recently graduated with a first-class degree in BSc (Hons) Computer Science at Nottingham Trent University. I currently work as a Graduate Software Engineer at a company in Nottingham, where I have worked mostly with ASP.NET, C#, TypeScript and SQL.",
             photoUrl: 'https://avatars0.githubusercontent.com/u/17948376'
         },
+        projects: {
+            title: 'Projects',
+            items: [
+                { 
+                    name: 'UK Coronavirus Vaccine Tracker', 
+                    description: 'This application tracks the rollout of vaccines in the United Kingdom. The data is sourced directly from the GOV.UK API in JSON format. A GitHub action is used to update the data periodically throughout the day on a set cron schedule.', 
+                    imageUrl: 'images/projects/uk-covid-tracker.png', 
+                    projectUrl: 'https://danielwinfield.uk/uk-covid-vaccine-tracker/',
+                    codeUrl: 'https://github.com/daniel-winfield/uk-covid-vaccine-tracker/'
+                },
+            ]
+        },
         skills: {
             title: 'Skills',
             languages: {
@@ -224,17 +236,6 @@ var app = new Vue({
                     ],
                     location: null,
                     imageUrl: 'images/microsoft-logo.png'
-                }
-            ]
-        },
-        projects: {
-            title: "Projects",
-            items: [
-                {
-                    title: "",
-                    description: "",
-                    imageUrl: "",
-                    linkUrl: ""
                 }
             ]
         }
