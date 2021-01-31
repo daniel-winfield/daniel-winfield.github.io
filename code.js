@@ -43,7 +43,7 @@ Vue.component('employment-item', {
                 <div class="row">
                     <div class="col-12">
                         <div v-for="position in item.positions">
-                            <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
+                            <p class="mb-2" style="font-weight:bold">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
                             <p>{{ position.description }}</p>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ var app = new Vue({
     data: {
         fullName: 'Daniel Winfield',
         months: months,
-        jobTitle: 'Full Stack Software Engineer',
+        jobTitle: 'Full-Stack Software Engineer',
         headerImageUrl: 'images/code-coding-computer-data-574070.jpg',
         socialLinks: [
             { name: 'GitHub', url: 'https://github.com/daniel-winfield', iconClass: 'fab fa-github' },
@@ -74,7 +74,7 @@ var app = new Vue({
         ],
         about: {
             title: 'About me',
-            description: "I have recently graduated with a first-class degree in BSc (Hons) Computer Science at Nottingham Trent University. I currently work as a Graduate Software Engineer at a company in Nottingham, where I have worked mostly with ASP.NET, C#, TypeScript and SQL.",
+            description: "I am a full-stack Software Engineer working in Nottingham. I currently work on a suite of products at Imosphere where I work with JavaScript, TypeScript, HTML, CSS, C# and T-SQL. I have previously worked as a Web Developer and I hold a first-class undergraduate degree, BSc (Hons) Computer Science, from Nottingham Trent University.",
             photoUrl: 'https://avatars0.githubusercontent.com/u/17948376'
         },
         projects: {
@@ -109,7 +109,7 @@ var app = new Vue({
                 title: 'Tools',
                 items: [
                     { name: 'Visual Studio', iconClass: 'fas fa-laptop-code' },
-                    { name: 'Azure Devops (TFS)', iconClass: 'fas fa-terminal' },
+                    { name: 'Azure DevOps (TFS)', iconClass: 'fas fa-terminal' },
                     { name: 'Git', iconClass: 'fab fa-git' }
                 ]
             },
@@ -128,16 +128,22 @@ var app = new Vue({
                     company: 'Imosphere Ltd',
                     positions: [
                         {
-                            jobTitle: 'Gradate Software Engineer',
-                            startDate: new Date(2019, 6),
+                            jobTitle: 'Software Engineer',
+                            startDate: new Date(2020, 8),
                             endDate: null,
+                            description: "A full-stack software engineer on the Health and Research Analytics (HaRA) team, responsible for developing features and fixing bugs on all products in the HaRA suite. The tech stack consists of JavaScript, TypeScript, HTML and CSS on the front end, and C# and T-SQL on the back end. I have also gained experience with Azure DevOps pipelines and both TFS and GIT repositories."
+                        },
+                        {
+                            jobTitle: 'Graduate Software Engineer',
+                            startDate: new Date(2019, 6),
+                            endDate: new Date(2020, 8),
                             description: "Responsible for designing and implementing features and bug fixes on the Atmolytics healthcare software platform (C#, ASP.NET, TypeScript, SQL), and for developing for the Resource Allocation System (SQL) in use by councils and CCG's across the United Kingdom."
                         },
                         {
                             jobTitle: 'Placement Software Engineer',
                             startDate: new Date(2017, 6),
                             endDate: new Date(2019, 6),
-                            description: "Worked on multiple projects during my year-long placement. This was continued in the same role during my final year of university on a one-day per week basis."
+                            description: "A one-year full-time placement which was undertaken as a part of my undergraduate degree. During this time I worked on multiple projects ranging from web-based analytics software to a SQL based resource allocation algorithm product. After the year was completed, this was continued on a one-day per week basis during the final year of my undergraduate degree."
                         }
                     ],
                     imageUrl: 'images/imosphere-logo.png',
@@ -195,7 +201,7 @@ var app = new Vue({
                     location: 'Burton-on-Trent, UK',
                     imageUrl: 'images/bsdc-logo.jpg'
                 }, {
-                    institution: 'Microsoft',
+                    institution: 'Microsoft Certificates',
                     qualifications: [
                         {
                             startDate: null,
