@@ -4,10 +4,10 @@ Vue.component('qualification-item', {
     props: ['item'],
     template: `
         <div class="row">
-            <div class="col-lg-2 col-3">
+            <div class="col-3 col-lg-2 d-print-none">
                 <img :src="item.imageUrl" style="width: 100%;"/>
             </div>
-            <div class="col-lg-10 col-7">
+            <div class="col-9 col-lg-10 col-print-12">
                 <div class="row">
                     <div class="col-12">
                         <p><span class="h5">{{ item.institution }}</span> <span style="float:right;" class="text-muted"><i v-if="item.location" class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
@@ -31,10 +31,10 @@ Vue.component('employment-item', {
     props: ['item', 'months'],
     template: `
         <div class="row">
-            <div class="col-lg-2 col-3">
+            <div class="col-3 col-md-2 d-print-none">
                 <img :src="item.imageUrl" style="width: 100%;"/>
             </div>
-            <div class="col-lg-10 col-9">
+            <div class="col-9 col-md-10 col-print-12">
                 <div class="row">
                     <div class="col-12">
                         <p><span class="h5">{{ item.company }}</span> <span style="float:right;" class="text-muted"><i class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
@@ -43,7 +43,7 @@ Vue.component('employment-item', {
                 <div class="row">
                     <div class="col-12">
                         <div v-for="position in item.positions">
-                            <p class="mb-2" style="font-weight:bold">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
+                            <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
                             <p>{{ position.description }}</p>
                         </div>
                     </div>
@@ -68,13 +68,13 @@ var app = new Vue({
         jobTitle: 'Full-Stack Software Engineer',
         headerImageUrl: 'images/code-coding-computer-data-574070.jpg',
         socialLinks: [
-            { name: 'GitHub', url: 'https://github.com/daniel-winfield', iconClass: 'fab fa-github' },
-            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/danielwinfield1/', iconClass: 'fab fa-linkedin-in' },
-            { name: 'Email', url: 'mailto:me@danielwinfield.uk', iconClass: 'fas fa-envelope' }
+            { name: 'GitHub', url: 'https://github.com/daniel-winfield', title: 'github.com/daniel-winfield', iconClass: 'fab fa-github' },
+            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/danielwinfield1/', title: 'linkedin.com/in/danielwinfield1', iconClass: 'fab fa-linkedin-in' },
+            { name: 'Email', url: 'mailto:me@danielwinfield.uk', title: 'me@danielwinfield.uk', iconClass: 'fas fa-envelope' }
         ],
         about: {
             title: 'About me',
-            description: "I am a full-stack Software Engineer working in Nottingham. I currently work on a suite of products at Imosphere where I work with JavaScript, TypeScript, HTML, CSS, C# and T-SQL. I have previously worked as a Web Developer and I hold a first-class undergraduate degree, BSc (Hons) Computer Science, from Nottingham Trent University.",
+            description: "I am a full-stack Software Engineer working in Nottingham. I currently work on a suite of products at Imosphere where I work with .NET Framework, .NET Core, C#, JavaScript, TypeScript, HTML, CSS and T-SQL. I have previously worked as a Web Developer and I hold a first-class undergraduate degree, BSc (Hons) Computer Science, from Nottingham Trent University.",
             photoUrl: 'https://avatars0.githubusercontent.com/u/17948376'
         },
         projects: {
