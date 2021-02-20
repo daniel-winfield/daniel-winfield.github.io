@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" rel="stylesheet"> 
         <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/print.css" rel="stylesheet" media="print">
         <link href="node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
         <title>Daniel Winfield</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,7 +27,7 @@
                     <div class="collapse navbar-collapse" id="navbarToggler">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item" v-for="link in socialLinks">
-                                <a class="nav-link" v-bind:href="link.url" target="_blank"><i :class="link.iconClass" class="" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
+                                <a class="nav-link" v-bind:href="link.url" :title="link.title" target="_blank"><i :class="link.iconClass" class="" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
                             </li>
                         </ul>
                     </div>
@@ -34,17 +35,17 @@
             </header>
             <main>
                 <div>
-                    <div class="" style="width: 100%; height: 100vh; padding-top: 30vh; text-align: center;">
+                    <div class="heading">
                         <h1 class="colour-primary signature font-size-5x">{{ fullName }}</h1>
                         <p class="lead">{{ jobTitle }}</p>
-                        <div>
-                            <a class="colour-primary pl-2 pr-2" v-for="link in socialLinks" v-bind:href="link.url" target="_blank"><i :class="link.iconClass" class="" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
+                        <div class="social-links">
+                            <a class="colour-primary pl-2 pr-2" v-for="link in socialLinks" v-bind:href="link.url" :title="link.title" target="_blank"><i :class="link.iconClass" class="" style="font-size: 1.5em;"></i :class="link.iconClass"></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="container mt-5">
-                    <div class="row" id="About">
+                    <div class="row about" id="About">
                         <div class="col-md-12">
                             <h2 class="text-center">{{ about.title }}</h2>
                             <div class="shadow p-3 mb-5 bg-white rounded">
@@ -52,7 +53,7 @@
                             </div>                      
                         </div>
                     </div>
-                    <div class="col-lg-12" id="Projects">
+                    <div class="col-lg-12 projects" id="Projects">
                         <div class="mb-3">
                             <h2 class="text-center">{{ projects.title }}</h2>
                             <div class="shadow p-3 bg-white rounded mb-3 col-12 col-lg-6" v-for="item in projects.items">
@@ -85,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="row" id="Skills">
+                    <div class="row skills" id="Skills">
                         <div class="col-12 mb-5">
                             <h2 class="text-center">{{ skills.title }}</h2>
                             <div class="row mb-3">
@@ -109,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 d-print-none">
                                     <h3 class="text-center">{{ skills.platforms.title }}</h3>
                                     <div style="text-align: center;">
                                         <div v-for="item in skills.platforms.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
@@ -122,7 +123,7 @@
                     </div>                    
 
                     <div class="row">
-                        <div class="col-lg-6" id="Employment">
+                        <div class="col-lg-6 employment" id="Employment">
                             <div class="mb-3">
                                 <h2 class="text-center">{{ workExperience.title }}</h2>
                                 <div class="shadow p-3 bg-white rounded mb-3" v-for="item in workExperience.items">
@@ -130,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6" id="Education">
+                        <div class="col-lg-6 education" id="Education">
                             <div class="mb-3">
                                 <h2 class="text-center">{{ education.title }}</h2>
                                 <div class="shadow p-3 bg-white rounded mb-3" v-for="item in education.items">
