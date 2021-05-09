@@ -3,53 +3,67 @@ var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 Vue.component('qualification-item', {
     props: ['item'],
     template: `
+    <div>
         <div class="row">
-            <div class="col-3 col-lg-2 d-print-none">
+            <div class="col-9 col-md-10 col-print-12">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="h5">{{ item.institution }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p><span class="text-muted"><i v-if="item.location" class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 col-md-2 d-print-none">
                 <img :src="item.imageUrl" style="width: 100%;"/>
             </div>
-            <div class="col-9 col-lg-10 col-print-12">
-                <div class="row">
-                    <div class="col-12">
-                        <p><span class="h5">{{ item.institution }}</span> <span style="float:right;" class="text-muted"><i v-if="item.location" class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div v-for="qualification in item.qualifications">
+                    <p class="mt-2">{{ qualification.qualification }} <span style="float:right;" class="text-muted">{{ qualification.startDate ? qualification.startDate.getFullYear() + ' - ' : '' }}{{ qualification.endDate.getFullYear() }}</span></p>
+                    <p>{{ qualification.info }}</p>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div v-for="qualification in item.qualifications">
-                            <p class="mb-2">{{ qualification.qualification }} <span style="float:right;" class="text-muted">{{ qualification.startDate ? qualification.startDate.getFullYear() + ' - ' : '' }}{{ qualification.endDate.getFullYear() }}</span></p>
-                            <p>{{ qualification.info }}</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
+    </div>
     `
 })
 
 Vue.component('employment-item', {
     props: ['item', 'months'],
     template: `
+    <div>
         <div class="row">
-            <div class="col-3 col-md-2 d-print-none">
-                <img :src="item.imageUrl" style="width: 100%;"/>
-            </div>
             <div class="col-9 col-md-10 col-print-12">
                 <div class="row">
                     <div class="col-12">
-                        <p><span class="h5">{{ item.company }}</span> <span style="float:right;" class="text-muted"><i class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
+                        <span class="h5">{{ item.company }}</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div v-for="position in item.positions">
-                            <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
-                            <p>{{ position.description }}</p>
-                        </div>
+                        <p><span class="text-muted"><i class="fas fa-map-marker-alt"></i> {{ item.location }}</span></p>
                     </div>
                 </div>
             </div>
+            <div class="col-3 col-md-2 d-print-none">
+                <img :src="item.imageUrl" style="width: 100%;"/>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div v-for="position in item.positions">
+                    <p class="mb-2">{{ position.jobTitle }} <span style="float:right;" class="text-muted">{{ months[position.startDate.getMonth()] + ' ' + position.startDate.getFullYear() }} - {{ position.endDate ? months[position.endDate.getMonth()] + ' ' + position.endDate.getFullYear() : 'Present' }}</span></p>
+                    <p>{{ position.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     `
 })
 
