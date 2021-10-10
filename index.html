@@ -53,6 +53,42 @@
                             </div>                      
                         </div>
                     </div>
+
+                    <div class="row skills" id="Skills">
+                        <div class="col-12 mb-5">
+                            <h2 class="text-center">{{ skills.title }}</h2>
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <h3 class="text-center">{{ skills.languages.title }}</h3>
+                                    <div style="text-align: center;">                                    
+                                        <div v-for="item in skills.languages.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <h3 class="text-center">{{ skills.tools.title }}</h3>
+                                    <div style="text-align: center;">
+                                        <div v-for="item in skills.tools.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-12 d-print-none">
+                                    <h3 class="text-center">{{ skills.platforms.title }}</h3>
+                                    <div style="text-align: center;">
+                                        <div v-for="item in skills.platforms.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
+                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>    
                     <div class="row projects" id="Projects">
                         <div class="col-lg-12 mb-3">
                             <h2 class="text-center">{{ projects.title }}</h2>
@@ -85,44 +121,9 @@
                             </div>
                         </div>
                     </div>
+                
 
-                    <div class="row skills" id="Skills">
-                        <div class="col-12 mb-5">
-                            <h2 class="text-center">{{ skills.title }}</h2>
-                            <div class="row mb-3">
-                                <div class="col-12">
-                                    <h3 class="text-center">{{ skills.languages.title }}</h3>
-                                    <div style="text-align: center;">                                    
-                                        <div v-for="item in skills.languages.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
-                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-12">
-                                    <h3 class="text-center">{{ skills.tools.title }}</h3>
-                                    <div style="text-align: center;">
-                                        <div v-for="item in skills.tools.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
-                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 d-print-none">
-                                    <h3 class="text-center">{{ skills.platforms.title }}</h3>
-                                    <div style="text-align: center;">
-                                        <div v-for="item in skills.platforms.items" class="m-1" style="font-size: 1.5em; display: inline-block;">
-                                            <skill-item class="pull-left" v-bind:item="item"></skill-item>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-lg-6 employment" id="Employment">
                             <div class="mb-3">
                                 <h2 class="text-center">{{ workExperience.title }}</h2>
@@ -139,7 +140,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </main>
             <footer>
